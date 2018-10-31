@@ -1,7 +1,7 @@
 package com.earnest.microtypical.data.validation
 
-import cats.Show
 import cats.syntax.functor._
+import com.earnest.microtypical.Show
 import com.earnest.microtypical.data.{Bounds, GapFree, Model, Representation, ValidatedCompanion}
 
 trait BoundedCompanion [V, R] extends ValidatedCompanion [V, R, Errors] {

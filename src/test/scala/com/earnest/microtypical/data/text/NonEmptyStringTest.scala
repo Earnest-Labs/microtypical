@@ -1,6 +1,5 @@
 package com.earnest.microtypical.data.text
 
-import cats.instances.int.catsStdShowForInt
 import com.earnest.microtypical.data.numeric.Gteq0
 import com.earnest.microtypical.data.text.NonEmptyString._
 import com.earnest.microtypical.data.text.NonEmptyStringTest._

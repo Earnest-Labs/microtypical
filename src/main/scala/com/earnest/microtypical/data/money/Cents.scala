@@ -1,7 +1,6 @@
 package com.earnest.microtypical.data.money
 
-import cats.Show
-import cats.instances.long.catsStdShowForLong
+import com.earnest.microtypical.Show
 import com.earnest.microtypical.data.Validated
 import com.earnest.microtypical.data.validation.BoundedCompanion
 

@@ -1,6 +1,5 @@
 package com.earnest.microtypical.data.decimal
 
-import cats.instances.int.catsStdShowForInt
 import com.earnest.microtypical.data.validation._
 import com.earnest.microtypical.data.{Model, Validated, ValidatedCompanion}
 import org.scalacheck.Gen.Choose

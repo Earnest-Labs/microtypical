@@ -1,7 +1,7 @@
 package com.earnest.microtypical.data.numeric
 
-import cats.Show
 import cats.syntax.functor._
+import com.earnest.microtypical.Show
 import com.earnest.microtypical.data.Bound.Exclusive
 import com.earnest.microtypical.data._
 import com.earnest.microtypical.data.validation._

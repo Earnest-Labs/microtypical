@@ -1,6 +1,5 @@
 package com.earnest.microtypical.syntax.scalacheck
 
-import cats.instances.int.catsStdShowForInt
 import com.earnest.microtypical.data.numeric.Gteq0
 import org.scalacheck.Gen
 import org.scalatest.prop.GeneratorDrivenPropertyChecks

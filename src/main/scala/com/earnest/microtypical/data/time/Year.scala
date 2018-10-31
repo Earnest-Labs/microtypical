@@ -2,11 +2,9 @@ package com.earnest.microtypical.data.time
 
 import java.time.{Year => JavaYear}
 
-import cats.Show
-import cats.instances.int.catsStdShowForInt
+import com.earnest.microtypical.Show
 import com.earnest.microtypical.data._
 import com.earnest.microtypical.data.validation._
-import com.earnest.microtypical.instances.java.time.year._
 
 abstract sealed case class Year (value: Int) extends Validated
 

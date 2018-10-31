@@ -1,6 +1,6 @@
 package com.earnest.microtypical.data
 
-import cats.Show
+import com.earnest.microtypical.Show
 
 trait ValidatedCompanion [V, R, E] {
   implicit val model: Model [V, R, E]

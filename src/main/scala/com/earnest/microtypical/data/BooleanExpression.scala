@@ -1,11 +1,9 @@
 package com.earnest.microtypical.data
 
 import cats.instances.option.catsStdInstancesForOption
-import cats.instances.string.catsStdShowForString
-import cats.{Apply, Monad, Semigroup, SemigroupK, Show}
-import com.earnest.microtypical.Predicate
+import cats.{Apply, Monad, Semigroup, SemigroupK}
 import com.earnest.microtypical.data.BooleanExpression.internal._
-import com.earnest.microtypical.data.validation.Errors
+import com.earnest.microtypical.{Predicate, Show}
 import org.scalacheck.{Arbitrary, Gen}
 
 sealed trait BooleanExpression [A]
@@ -15,8 +13,6 @@ object BooleanExpression {
   case class Not [A] (expr: Expr [A]) extends Expr [A]
   case class Or [A] (left: Expr [A], right: Expr [A]) extends Expr [A]
   case class Pure [A] (value: A) extends Expr [A]
-
-  implicit val showErrors: Show [Errors] = show (catsStdShowForString)
 
   implicit val monad: Monad [Expr] = new Monad [Expr] {
     override def pure [A] (a: A): Expr [A] = Pure (a)

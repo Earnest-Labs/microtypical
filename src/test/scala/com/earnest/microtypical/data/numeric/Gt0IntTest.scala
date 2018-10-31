@@ -1,7 +1,6 @@
 package com.earnest.microtypical.data.numeric
 
 
-import cats.instances.int.catsStdShowForInt
 import com.earnest.microtypical.data.{Model, Representation}
 import com.earnest.microtypical.data.numeric.Gt0._
 import com.earnest.microtypical.data.numeric.Gt0IntTest._

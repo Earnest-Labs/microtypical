@@ -2,10 +2,11 @@ package com.earnest.microtypical.data
 
 import java.util.Comparator
 
-import cats.syntax.functorFilter._
+import cats.Order
 import cats.syntax.contravariant._
 import cats.syntax.functor.toFunctorOps
-import cats.{Order, Show}
+import cats.syntax.functorFilter._
+import com.earnest.microtypical.Show
 import com.earnest.microtypical.instances.scalacheck.arbitrary.microtypicalInstancesScalacheckArbitraryMonadFilter
 import io.circe.generic.decoding.DerivedDecoder
 import io.circe.generic.encoding.DerivedObjectEncoder

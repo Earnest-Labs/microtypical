@@ -1,7 +1,6 @@
 package com.earnest.microtypical.data.decimal
 
-import cats.Show
-import cats.instances.int.catsStdShowForInt
+import com.earnest.microtypical.Show
 import com.earnest.microtypical.data.Validated
 import com.earnest.microtypical.data.validation.BoundedCompanion
 import org.scalacheck.{Arbitrary, Gen}
