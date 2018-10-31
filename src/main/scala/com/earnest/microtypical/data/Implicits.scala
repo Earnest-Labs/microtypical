@@ -62,7 +62,7 @@ trait ImplicitsIso2 extends ImplicitsModel1 {
 }
 
 trait ImplicitsModel1 extends ImplicitsModel2 {
-  implicit def microtypicalDataChoose [V, R] (implicit m: Model [V, R, _], g: GapFree [V], c: Choose [R]): Choose [V] =
+  implicit def microtypicalDataChoose [V, R, E] (implicit m: Model [V, R, E], g: GapFree [V], c: Choose [R], s: Show [E]): Choose [V] =
     Choose .xmap (m.applyUnsafe, m.review) (c)
 
   implicit def microtypicalDataChooseRepresentation [V, R] (implicit m: Model [V, R, _], g: GapFree [V], c: Choose [R]): Choose [Representation [V, R]] =

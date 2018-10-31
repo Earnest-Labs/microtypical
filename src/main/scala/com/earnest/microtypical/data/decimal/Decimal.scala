@@ -63,8 +63,8 @@ object Decimal extends ValidatedCompanion.Parametrized [Decimal, BigDecimal, ToI
     }
 
   def roundBigDecimal [N <: Succ [_]] (value: BigDecimal) (implicit n: ToInt [N]): Decimal [N] =
-    applyUnsafe (if (value.scale <= n.apply) value else value setScale (n.apply, RoundingMode.HALF_UP)) (n)
+    applyUnsafe (if (value.scale <= n.apply) value else value setScale (n.apply, RoundingMode.HALF_UP))
 
   def roundDouble [N <: Succ [_]] (value: Double) (implicit n: ToInt [N]): Decimal [N] =
-    applyUnsafe (BigDecimal (value) setScale (n.apply, RoundingMode.HALF_UP)) (n)
+    applyUnsafe (BigDecimal (value) setScale (n.apply, RoundingMode.HALF_UP))
 }
