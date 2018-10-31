@@ -72,8 +72,7 @@ object Show {
   }
 
   object toCats {
-    implicit def microtypicalShowToCatsShow [A] (implicit s: Show [A]): cats.Show [A] =
-      cats.Show show s.show
+    implicit def microtypicalShowToCatsShow [A] (implicit s: Show [A]): cats.Show [A] = cats.Show show s.show
   }
 
   implicit def fromCats [A] (implicit catsShow: cats.Show [A]): Show [A] = show (catsShow.show)
