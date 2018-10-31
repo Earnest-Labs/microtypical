@@ -1,6 +1,6 @@
 package com.earnest.microtypical.data.validation
 
-import cats.Show
+import com.earnest.microtypical.Show
 import cats.syntax.functor._
 import com.earnest.microtypical.data.{Bounds, GapFree, Model, Representation, ValidatedCompanion}
 

@@ -1,12 +1,12 @@
 package com.earnest.microtypical.data
 
-import cats.{UnorderedFoldable, Show}
+import cats.UnorderedFoldable
 import cats.syntax.functor._
-import com.earnest.microtypical.Predicate
 import com.earnest.microtypical.data.BooleanExpression.monad.map
 import com.earnest.microtypical.data.BooleanExpression.{Context, Pure, prune}
 import com.earnest.microtypical.data.Bound.{Exclusive, Inclusive}
 import com.earnest.microtypical.data.Constraint.profunctor.lmap
+import com.earnest.microtypical.{Predicate, Show}
 
 package object validation {
   type Constraints [A] = BooleanExpression [Constraint [A, Error]]

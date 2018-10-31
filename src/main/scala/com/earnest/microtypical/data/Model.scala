@@ -1,7 +1,7 @@
 package com.earnest.microtypical.data
 
-import cats.Show
 import cats.syntax.either._
+import com.earnest.microtypical.Show
 
 trait Model [V, R, E] {
   def apply (r: R): Either [E, V]

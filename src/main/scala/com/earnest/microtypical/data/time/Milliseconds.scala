@@ -1,6 +1,5 @@
 package com.earnest.microtypical.data.time
 
-import cats.instances.int.catsStdShowForInt
 import com.earnest.microtypical.data.implicits.microtypicalDataArbitraryFromIso
 import com.earnest.microtypical.data.numeric.Gteq0
 import com.earnest.microtypical.data.{Iso, Validated}

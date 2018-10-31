@@ -1,7 +1,5 @@
 package com.earnest.microtypical.data.money
 
-import cats.instances.bigDecimal.catsStdShowForBigDecimal
-import cats.instances.int.catsStdShowForInt
 import cats.syntax.functor._
 import com.earnest.microtypical.data.implicits.microtypicalDataChooseFromIso
 import com.earnest.microtypical.data.validation._

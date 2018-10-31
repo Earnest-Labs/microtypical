@@ -1,7 +1,5 @@
 package com.earnest.microtypical.data.validation
 
-import cats.instances.int.catsStdShowForInt
-import cats.instances.string.catsStdShowForString
 import com.earnest.microtypical.data.collection.NonEmptyMap
 import com.earnest.microtypical.data.{Enumerated, Model, ValidatedCompanion}
 

@@ -3,11 +3,9 @@ package com.earnest.microtypical.data.time
 import java.time.Instant
 import java.time.temporal.ChronoUnit.MICROS
 
-import cats.Show
-import cats.instances.long.catsStdShowForLong
+import com.earnest.microtypical.Show
 import com.earnest.microtypical.data._
 import com.earnest.microtypical.data.validation._
-import com.earnest.microtypical.instances.java.time.instant._
 
 abstract sealed case class EpochMicrosecond (value: Long) extends Validated
 

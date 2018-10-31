@@ -3,11 +3,9 @@ package com.earnest.microtypical.data.time
 import java.time.temporal.ChronoUnit
 import java.time.{Month, YearMonth}
 
-import cats.Show
-import cats.instances.int.catsStdShowForInt
+import com.earnest.microtypical.Show
 import com.earnest.microtypical.data._
 import com.earnest.microtypical.data.validation._
-import com.earnest.microtypical.instances.java.time.yearmonth._
 import com.earnest.microtypical.syntax.scala.long._
 
 abstract sealed case class EpochMonth (value: Int) extends Validated

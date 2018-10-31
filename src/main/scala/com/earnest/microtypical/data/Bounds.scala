@@ -1,5 +1,7 @@
 package com.earnest.microtypical.data
 
+import java.time.{Instant, LocalDate, Year, YearMonth}
+
 import cats.Functor
 import cats.syntax.functor._
 import com.earnest.microtypical.data.Bound.{Exclusive, Inclusive}
@@ -39,4 +41,9 @@ object Bounds {
 
   implicit val float: Bounds [Float] = inclusive (Float.MinValue, Float.MaxValue)
   implicit val double: Bounds [Double] = inclusive (Double.MinValue, Double.MaxValue)
+
+  implicit val instant: Bounds [Instant] = Bounds inclusive (Instant.MIN, Instant.MAX)
+  implicit val localDate: Bounds [LocalDate] = Bounds inclusive (LocalDate.MIN, LocalDate.MAX)
+  implicit val year: Bounds [Year] = Bounds inclusive (Year.MIN_VALUE, Year.MAX_VALUE) map Year.of
+  implicit val yearMonth: Bounds [YearMonth] = Bounds inclusive (YearMonth of (Year.MIN_VALUE, 1), YearMonth of (Year.MAX_VALUE, 12))
 }

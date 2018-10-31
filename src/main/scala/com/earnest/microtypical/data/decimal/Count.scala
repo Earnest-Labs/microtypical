@@ -1,6 +1,5 @@
 package com.earnest.microtypical.data.decimal
 
-import cats.instances.int.catsStdShowForInt
 import com.earnest.microtypical.data.numeric.Gteq0
 import com.earnest.microtypical.data.validation._
 import com.earnest.microtypical.data.{Bounds, Model, Validated, ValidatedCompanion}
