@@ -73,6 +73,8 @@ object Show {
 
   implicit def fromCats [A] (implicit catsShow: cats.Show [A]): Show [A] = show (catsShow.show)
 
+  implicit val string: Show [String] = show (identity)
+
   implicit val boolean: Show [Boolean] = fromToString
 
   implicit val char: Show [Char] = fromToString
@@ -85,13 +87,11 @@ object Show {
   implicit val float: Show [Float] = fromToString
   implicit val double: Show [Double] = fromToString
 
-  implicit val string: Show [String] = fromToString
-
   implicit val bigInt: Show [BigInt] = fromToString
   implicit val bigDecimal: Show [BigDecimal] = fromToString
 
-  implicit val instant: Show [Instant] = Show.fromToString
-  implicit val localDate: Show [LocalDate] = Show.fromToString
-  implicit val year: Show [Year] = Show.fromToString
-  implicit val yearMonth: Show [YearMonth] = Show.fromToString
+  implicit val instant: Show [Instant] = fromToString
+  implicit val localDate: Show [LocalDate] = fromToString
+  implicit val year: Show [Year] = fromToString
+  implicit val yearMonth: Show [YearMonth] = fromToString
 }
