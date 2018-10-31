@@ -1,9 +1,9 @@
 package com.earnest.microtypical.data
 
 import cats.arrow.Profunctor
-import com.earnest.microtypical.{Predicate, Show}
 import com.earnest.microtypical.Show.microtypicalContravariantForShow.contramap
 import com.earnest.microtypical.data.BooleanExpression.Pure
+import com.earnest.microtypical.{Predicate, Show}
 
 import scala.language.implicitConversions
 

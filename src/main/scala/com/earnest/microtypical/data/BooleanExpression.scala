@@ -2,8 +2,8 @@ package com.earnest.microtypical.data
 
 import cats.instances.option.catsStdInstancesForOption
 import cats.{Apply, Monad, Semigroup, SemigroupK}
-import com.earnest.microtypical.{Predicate, Show}
 import com.earnest.microtypical.data.BooleanExpression.internal._
+import com.earnest.microtypical.{Predicate, Show}
 import org.scalacheck.{Arbitrary, Gen}
 
 sealed trait BooleanExpression [A]
