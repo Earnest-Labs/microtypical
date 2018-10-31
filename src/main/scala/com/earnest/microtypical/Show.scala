@@ -22,7 +22,7 @@ trait Show[T] extends Show.ContravariantShow[T]
 /**
  * Hand rolling the type class boilerplate due to scala/bug#6260 and scala/bug#10458
  */
-object Show {
+object Show extends Show2 {
 
   def apply[A](implicit instance: Show[A]): Show[A] = instance
 
@@ -73,6 +73,7 @@ object Show {
 
   object toCats {
     implicit def microtypicalShowToCatsShow [A] (implicit s: Show [A]): cats.Show [A] = cats.Show show s.show
+    implicit def microtypicalShowToCatsShowContravariant [A] (implicit s: Show.ContravariantShow [A]): cats.Show.ContravariantShow [A] = cats.Show show s.show
   }
 
   implicit def fromCats [A] (implicit catsShow: cats.Show [A]): Show [A] = show (catsShow.show)
@@ -98,4 +99,10 @@ object Show {
   implicit val localDate: Show [LocalDate] = fromToString
   implicit val year: Show [Year] = fromToString
   implicit val yearMonth: Show [YearMonth] = fromToString
+}
+
+trait Show2 {
+  import Show.ContravariantShow
+
+  implicit def fromCatsContravariant [A] (implicit catsShow: cats.Show.ContravariantShow [A]): ContravariantShow [A] = Show show catsShow.show
 }
