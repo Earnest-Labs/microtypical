@@ -5,17 +5,17 @@ import com.earnest.microtypical.data.validation._
 import com.earnest.microtypical.syntax.scalacheck.GenGteq
 import org.scalacheck.Arbitrary
 
-case class RangeRepr [A] (start: A, end: A)
+case class OrderedRangeRepr [A] (start: A, end: A)
 
-abstract sealed case class OrderedRange [A] (value: RangeRepr [A]) extends Validated
+abstract sealed case class OrderedRange [A] (value: OrderedRangeRepr [A]) extends Validated
 
-object OrderedRange extends ValidatedCompanion.Poly1Typeclass1 [OrderedRange, RangeRepr, Ordering, Errors] {
-  def constraints [A] (implicit o: Ordering [A]): Constraints [RangeRepr [A]] =
-    constraint [RangeRepr [A]] (r => o lteq (r.start, r.end), "start must be <= end")
+object OrderedRange extends ValidatedCompanion.Poly1Typeclass1 [OrderedRange, OrderedRangeRepr, Ordering, Errors] {
+  def constraints [A] (implicit o: Ordering [A]): Constraints [OrderedRangeRepr [A]] =
+    constraint [OrderedRangeRepr [A]] (r => o lteq (r.start, r.end), "start must be <= end")
 
-  override implicit def model [A] (implicit o: Ordering [A]): Model [OrderedRange [A], RangeRepr [A], Errors] =
+  override implicit def model [A] (implicit o: Ordering [A]): Model [OrderedRange [A], OrderedRangeRepr [A], Errors] =
     Model .instance (
-      validate [OrderedRange [A], RangeRepr [A]] (
+      validate [OrderedRange [A], OrderedRangeRepr [A]] (
         constraints (o),
         new OrderedRange [A] (_) {}),
       _.value)
@@ -30,5 +30,5 @@ object OrderedRange extends ValidatedCompanion.Poly1Typeclass1 [OrderedRange, Ra
       for {
         start <- a.arbitrary
         end <- gteq apply start
-      } yield model applyUnsafe RangeRepr (start, end))
+      } yield model applyUnsafe OrderedRangeRepr (start, end))
 }

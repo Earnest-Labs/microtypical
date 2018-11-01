@@ -10,8 +10,8 @@ import org.scalatest.{FreeSpec, Matchers}
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
 
 object OrderedRangeTest {
-  type V [A] = Valid [OrderedRange [A], RangeRepr [A]]
-  type I [A] = Invalid [OrderedRange [A], RangeRepr [A]]
+  type V [A] = Valid [OrderedRange [A], OrderedRangeRepr [A]]
+  type I [A] = Invalid [OrderedRange [A], OrderedRangeRepr [A]]
   implicit def arbitraryRangeReprValid [A] (
     implicit
     a: Arbitrary [A],
@@ -19,7 +19,7 @@ object OrderedRangeTest {
     Arbitrary (for {
       i <- arb [A]
       j <- GenGt to i
-    } yield Valid (RangeRepr (i, j)))
+    } yield Valid (OrderedRangeRepr (i, j)))
 
   implicit def arbitraryRangeReprInvalid [A] (
     implicit
@@ -28,7 +28,7 @@ object OrderedRangeTest {
       Arbitrary (for {
         i <- arb [A]
         j <- GenLt to i
-      } yield Invalid (RangeRepr (i, j)))
+      } yield Invalid (OrderedRangeRepr (i, j)))
 }
 
 class OrderedRangeTest extends FreeSpec with GeneratorDrivenPropertyChecks with Matchers {
